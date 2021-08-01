@@ -1,0 +1,101 @@
+@import "mixins";
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#navbar{
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    background-color: black;
+
+    
+}
+
+#theme{
+    margin:10px;
+}
+
+
+
+.blog-container{
+    padding: 10px;
+    display: flex;
+    .blog-content{
+        width: 80%;
+        margin: 10px;
+        .blog-image{
+            width: 70%;
+            display: block;
+            margin: auto;
+        }
+        .blog-heading{
+            margin-bottom: 10px;
+            @include flex(column,space-between);
+            i{
+                margin:10px;
+            }
+        }
+        p{ 
+          
+            padding: 15px; 
+            margin-top: 10px;
+            text-align:justify;
+        }
+        
+    }
+    
+    .blog-related-links{
+        h2{
+            margin: 10px;
+            text-align: center;
+        }
+        @include flex(column,flex-start,flex-start);
+        margin:10px;
+        .related-links{
+            
+            text-align:start;
+        }
+        .related-links{
+            color: inherit;
+            margin:10px;
+            text-decoration: none;
+        }
+    }
+
+}
+
+.dark{
+    background-color: rgb(44, 42, 42);
+    color:white;
+}
+
+
+#root > .toggle{
+    display: none;
+}
+
+
+@media only screen and (max-width:800px){
+    .blog-container > .blog-content{
+        width:100%;
+    }
+    .blog-container > .blog-related-links{
+        display: none;
+        position: absolute;
+        left:0px;
+        margin: 0px;
+        background-color: grey;
+    }
+    #root > .toggle{
+        margin: 10px;
+        display: block;
+    }
+
+
+}
