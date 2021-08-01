@@ -37,7 +37,7 @@ export const Blog=(data,blog)=>{
     blogContent.appendChild(imageUrl);
     blogContent.appendChild(blogPara)
     let blogrelatedlinks=document.createElement("div");
-    blogrelatedlinks.className="blog-related-links";
+    blogrelatedlinks.className="blog-related-links active";
     blogrelatedlinks.id="blog-links"
     let heading=document.createElement("h2");
     heading.innerText="Related Links";

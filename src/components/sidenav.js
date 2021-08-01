@@ -12,8 +12,8 @@ export const sidenav=()=>{
 
 const hide=(event)=>{
     let related=document.getElementById("blog-links");
-    if(related.style.display==="flex"){
-        related.style.display="none"
+    if(related.style.display==="flex" ){
+        related.style.display="none";   
     }else{
         related.style.display="flex";
         

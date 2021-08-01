@@ -51,6 +51,8 @@
     }
     
     .blog-related-links{
+        
+        display: flex;
         h2{
             margin: 10px;
             text-align: center;
@@ -58,7 +60,6 @@
         @include flex(column,flex-start,flex-start);
         margin:10px;
         .related-links{
-            
             text-align:start;
         }
         .related-links{
@@ -84,13 +85,17 @@
 @media only screen and (max-width:800px){
     .blog-container > .blog-content{
         width:100%;
+
     }
     .blog-container > .blog-related-links{
+        
         display: none;
         position: absolute;
         left:0px;
         margin: 0px;
         background-color: grey;
+
+
     }
     #root > .toggle{
         margin: 10px;

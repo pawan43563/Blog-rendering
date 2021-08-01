@@ -29,7 +29,15 @@ function passingFunction(data){
 }
 
 
-
+window.onresize = function(event) {
+    let related=document.getElementById("blog-links");
+    if(window.innerWidth>800){
+        related.style.display="flex"
+    }
+    if(window.innerWidth<800){
+        related.style.display="none"
+    }
+};
 
 
 
