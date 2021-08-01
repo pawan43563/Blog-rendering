@@ -4,6 +4,7 @@ import { Footer } from "./components/footer.js";
 import { blogobj } from "./components/blog-section.js";
 import { blogs } from "./data.js";
 import { sidenav } from "./components/sidenav.js";
+import { copyright } from "./components/copyright.js";
 
 const rootDiv=document.getElementById("root");
 
@@ -26,16 +27,21 @@ function passingFunction(data){
     rootDiv.appendChild((sidenav()))
     let blogid=randombloggenerator(data)
     rootDiv.appendChild(Blog(data,blogobj({data,blogid})));
+    rootDiv.appendChild(Footer());
+    rootDiv.appendChild(copyright())
 }
 
 
 window.onresize = function(event) {
     let related=document.getElementById("blog-links");
+    let after=document.getElementsByClassName("after-div-links")[0]
     if(window.innerWidth>800){
         related.style.display="flex"
+        after.style.display="none";
     }
     if(window.innerWidth<800){
         related.style.display="none"
+        after.style.display="flex";
     }
 };
 
@@ -43,17 +49,3 @@ window.onresize = function(event) {
 
 
 
-// fetch(baseUrl2)
-// .then((response)=>{
-//     return response.json()
-// })
-// .then((data)=>{
-//     passingDataFooter(data);
-// })
-// .catch((err)=>{
-//     console.log("Error Received while fetching data",err);
-// })
-
-// const passingDataFooter=(data)=>{
-//     rootDiv.appendChild(Footer(data.FooterData));
-// }

@@ -1,34 +1,21 @@
 
 
-export const Footer=(FooterData)=>{
-    console.log(FooterData);
+export const Footer=()=>{
     let markup=document.createElement("div");
     markup.classList.add("footer");
     const links=document.createElement("div");
     links.classList.add("footer-links")
-    markup.appendChild(links);
-    FooterData.FootLinks.forEach((link)=>{
-        let a=document.createElement("a");
-        let Link=document.createElement("i");
-        link.class.forEach((item)=>{
-            Link.classList.add(item)
-        })
-        Link.href=link.href;
-
-
-        a.appendChild(Link);
-        links.appendChild(a);
-    })
-    const copyright=document.createElement("div");
-    copyright.classList.add("copyright");
-    const head=document.createElement("p");
-    head.innerText=FooterData.Copyright;
-    copyright.appendChild(head);
-
-
+    const link1=document.createElement("i")
+    link1.className="fa fa-github fa-2x"
+    const link2=document.createElement("i")
+    link2.className="fa fa-linkedin fa-2x"
+    const link3=document.createElement("i")
+    link3.className="fa fa-facebook fa-2x"
+    links.appendChild(link1)
+    links.appendChild(link2)
+    links.appendChild(link3)
     markup.appendChild(links)
-    markup.appendChild(copyright)
-    return markup;
+    return markup
 
 
 }
