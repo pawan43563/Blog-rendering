@@ -4,6 +4,7 @@
   margin: 0px;
   padding: 0px;
   font-family: 'Acme', sans-serif;
+  scroll-behavior: smooth;
 }
 
 #navbar {
@@ -69,32 +70,6 @@
   text-align: justify;
 }
 
-@-webkit-keyframes bouncein {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes bouncein {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 .blog-container .blog-related-links {
   -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
           box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
@@ -133,7 +108,7 @@
 }
 
 .blog-container .blog-related-links .related-links:hover {
-  color: blue;
+  text-decoration: underline;
 }
 
 #copyright {
@@ -237,6 +212,6 @@
     margin: 5px;
   }
   .after-div-links .related-links:hover {
-    color: blue;
+    text-decoration: underline;
   }
 }
