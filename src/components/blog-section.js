@@ -1,12 +1,12 @@
 import { BlogRelatedlinks } from "./blog-related-links.js"
+import { blogsArray } from "../app.js"
 
-export const blogobj=({data:props,blogid:blogid})=>{
-
-    return props.find(element=> element.id==blogid )
+export const blogobj=(blogid)=>{
+    return blogsArray[0].find(element=> element.id==blogid )
 }
 
 
-export const Blog=(data,blog)=>{
+export const Blog=(blog)=>{
     let blogDiv=document.createElement("div")
     blogDiv.className="blog-container";
     blogDiv.id=blog.id;
@@ -37,10 +37,9 @@ export const Blog=(data,blog)=>{
     blogContent.appendChild(blogPara)
     
 
-
     blogDiv.appendChild(blogContent)
-    blogDiv.appendChild(BlogRelatedlinks(data,blog))
-    let afterdiv=BlogRelatedlinks(data,blog);
+    blogDiv.appendChild(BlogRelatedlinks(blog))
+    let afterdiv=BlogRelatedlinks(blog);
     afterdiv.className="after-div-links";
     blogDiv.appendChild(afterdiv)
     return blogDiv

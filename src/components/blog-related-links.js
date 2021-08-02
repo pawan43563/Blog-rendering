@@ -1,7 +1,7 @@
 import { blogobj } from "./blog-section.js";
 import { Blog } from "./blog-section.js";
 
-export const BlogRelatedlinks=(data,blog)=>{
+export const BlogRelatedlinks=(blog)=>{
     let blogrelatedlinks=document.createElement("div");
     blogrelatedlinks.className="blog-related-links active";
     blogrelatedlinks.id="blog-links"
@@ -14,18 +14,18 @@ export const BlogRelatedlinks=(data,blog)=>{
         a.id=link.id;
         a.innerText=link.title;
         a.className="related-links";
-        a.addEventListener('click',(event)=>RelatedLinks(event,data));
+        a.addEventListener('click',(event)=>RelatedLinks(event));
         blogrelatedlinks.appendChild(a);
         
     });
     return blogrelatedlinks
 }
 
-const RelatedLinks=(event,data)=>{
+const RelatedLinks=(event)=>{
     let root=document.getElementById("root");
     let clas=document.getElementsByClassName("blog-container")[0];
     let blogid=event.target.id;
-    let result=blogobj({data,blogid})
-    root.replaceChild(Blog(data,result),clas)
+    let result=blogobj(blogid)
+    root.replaceChild(Blog(result),clas)
     // clas.innerHTML=Blog(data,result).innerHTML
 }

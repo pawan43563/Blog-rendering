@@ -8,7 +8,7 @@ import { copyright } from "./components/copyright.js";
 
 const rootDiv=document.getElementById("root");
 
-
+export let blogsArray=[]
 
 
 const randombloggenerator=(data)=>{
@@ -18,6 +18,7 @@ const randombloggenerator=(data)=>{
 }
 
 blogs().then((data)=>{
+    blogsArray.push(data)
     passingFunction(data)
 })
 
@@ -25,8 +26,8 @@ blogs().then((data)=>{
 function passingFunction(data){
     rootDiv.appendChild(Navbar());
     rootDiv.appendChild((sidenav()))
-    let blogid=randombloggenerator(data)
-    rootDiv.appendChild(Blog(data,blogobj({data,blogid})));
+    let blogid=randombloggenerator(blogsArray[0])
+    rootDiv.appendChild(Blog(blogobj(blogid)));
     rootDiv.appendChild(Footer());
     rootDiv.appendChild(copyright())
 }
@@ -44,7 +45,6 @@ window.onresize = function(event) {
         after.style.display="flex";
     }
 };
-
 
 
 
